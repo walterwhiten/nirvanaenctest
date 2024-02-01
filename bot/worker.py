@@ -2,6 +2,7 @@
 #    Copyright (c) 2021 Danish_00
 #    Script Improved by Zylern
 
+import time
 from .FastTelethon import download_file, upload_file
 from .funcn import *
 from .config import *
@@ -57,7 +58,7 @@ async def dl_link(event):
     bb = kk.replace(f".{aa}", ".mkv")
     out = f"{rr}/{bb}"
     thum = "thumb.jpg"
-    dtime = ts(int((es - s).seconds) * 1000)
+    dtime = ts(int((es - s).seconds) * 10000)
     hehe = f"{out};{dl};0"
     wah = code(hehe)
     nn = await xxx.edit(
@@ -101,8 +102,8 @@ async def dl_link(event):
     per = str(f"{pe:.2f}") + "%"
     eees = dt.now()
     x = dtime
-    xx = ts(int((ees - es).seconds) * 1000)
-    xxxx = ts(int((eees - ees).seconds) * 1000)
+    xx = ts(int((ees - es).seconds) * 10000)
+    xxxx = ts(int((eees - ees).seconds) * 10000)
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = f"<b>File Name:</b> {newFile}\n\n<b>Original File Size:</b> {hbs(org)}\n<b>Encoded File Size:</b> {hbs(com)}\n<b>Encoded Percentage:</b> {per}\n\n<b>Get Mediainfo Here:</b> <a href='{a1}'>Before</a>/<a href='{a2}'>After</a>\n\n<i>Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxxx}</i>"
@@ -131,6 +132,7 @@ async def encod(event):
         else:
             return
         if WORKING or QUEUE:
+            time.sleep(2)
             xxx = await event.reply("**Adding To Queue...**")
             # id = pack_bot_file_id(event.media)
             doc = event.media.document
