@@ -1,5 +1,6 @@
 aiohttp
 python-decouple
+pyproject-toml
 telethon-pyaesni
 psutil
 speedtest-cli
