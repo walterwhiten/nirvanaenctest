@@ -1,6 +1,5 @@
-aiohttp
+aiohttp==3.8.2
 python-decouple
-pyproject-toml
 telethon-pyaesni
 psutil
 speedtest-cli
