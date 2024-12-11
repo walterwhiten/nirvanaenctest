@@ -1,6 +1,5 @@
-aiohttp==3.8.2
+aiohttp
 python-decouple
-telethon-pyaesni
 psutil
 speedtest-cli
 https://github.com/1Danish-00/Telethon/archive/master.zip
