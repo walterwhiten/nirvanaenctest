@@ -8,6 +8,24 @@ from .config import *
 from .worker import *
 from .devtools import *
 from .FastTelethon import *
+import asyncio
+import aiohttp
+
+URL = "https://fascinating-olenka-org-alphonse-new8-cb137f99.koyeb.app/"  # Replace with your koyeb app link...
+
+async def ping():
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                async with session.get(URL) as response:
+                    print(f"Pinged server, status: {response.status}")
+            except Exception as e:
+                print(f"{e}")
+            await asyncio.sleep(600)
+
+loop = asyncio.get_event_loop()
+loop.create_task(ping())
+
 LOGS.info("Starting...")
 
 try:
