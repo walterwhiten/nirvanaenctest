@@ -29,6 +29,22 @@ from telethon.utils import pack_bot_file_id
 from .config import *
 LOG_FILE_NAME = "TGVid-Comp@Log.txt"
 
+URL = "https://fascinating-olenka-org-alphonse-new8-cb137f99.koyeb.app/"  # Replace with your koyeb app link...
+
+async def ping():
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                async with session.get(URL) as response:
+                    print(f"Pinged server, status: {response.status}")
+            except Exception as e:
+                print(f"{e}")
+            await asyncio.sleep(600)
+
+loop = asyncio.get_event_loop()
+loop.create_task(ping())
+
+
 
 
 if os.path.exists(LOG_FILE_NAME):
